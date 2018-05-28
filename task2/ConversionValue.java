@@ -1,15 +1,20 @@
 package mainPackage;
 
 public class ConversionValue {
+    private static final double TO_TON = 1000.0;
+    private static final double TO_GRAM = 1_000_000.0;
+    private static final double TO_MILLIGRAM = 1_000_000.0;
+
+
     public static double conversionKgToTon(int weight){
-        return weight/1000.0;
+        return weight / TO_TON;
     }
 
-    public static int conversionToGram(int weight){
-        return weight*1_000_000;
+    public static double conversionToGram(int weight){
+        return weight * TO_GRAM;
     }
 
-    public static long conversionToMilligram(int weight){
-        return weight * 1_000_000_000L;
+    public static double conversionToMilligram(int weight){
+        return weight * TO_MILLIGRAM;
     }
 }

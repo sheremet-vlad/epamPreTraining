@@ -1,9 +1,11 @@
 package mainPackage;
 
-public class findSquare {
+public class FindSquare {
     public static double findRingSquare(double smallRadius, double bigRadius){
-        double squareOfBigCircle = Math.PI * Math.pow(bigRadius,2);
-        double squareIfSmallCircle = Math.PI * Math.pow(smallRadius,2);
-        return  squareOfBigCircle - squareIfSmallCircle;
+        return  findCircleSquare(bigRadius) - findCircleSquare(smallRadius);
+    }
+
+    public static double findCircleSquare(double radius){
+        return Math.PI * radius * radius;
     }
 }

@@ -1,28 +1,27 @@
 package mainPackage;
 
 public class CheckOrder {
-    private static int firstNumeral,
-                        secondNumeral,
-                        thirdNumeral,
-                        forthNumral;
+    public static boolean checkIncreasOrderInNumber(int value){
+        //find Numerals
+        int firstNumeral = value % 10;
+        int secondNumeral = (value /= 10) % 10;
+        int thirdNumeral = (value /= 10) % 10;
+        int forthNumral = (value /= 10) % 10;
 
-    private static void findNumrals(int value){
-        firstNumeral = value % 10;
-        value /= 10;
-        secondNumeral = value % 10;
-        value /= 10;
-        thirdNumeral = value % 10;
-        value /= 10;
-        forthNumral = value;
+        return (firstNumeral > secondNumeral) &&
+                (secondNumeral > thirdNumeral) &&
+                (thirdNumeral > forthNumral);
     }
-    public static boolean checkOrderInNumber(int value){
-        findNumrals(value);
-        boolean orderOrNot = ((firstNumeral > secondNumeral) &&
-                                (secondNumeral > thirdNumeral) &&
-                                (thirdNumeral > forthNumral)) ||
-                            ((firstNumeral < secondNumeral) &&
-                                (secondNumeral < thirdNumeral) &&
-                                (thirdNumeral < forthNumral));
-        return orderOrNot;
+
+    public static boolean checkDecreaseOrderInNumber(int value){
+        //find Numerals
+        int firstNumeral = value % 10;
+        int secondNumeral = (value /= 10) % 10;
+        int thirdNumeral = (value /= 10) % 10;
+        int forthNumral = (value /= 10) % 10;
+
+        return (firstNumeral < secondNumeral) &&
+                (secondNumeral < thirdNumeral) &&
+                (thirdNumeral < forthNumral);
     }
 }
