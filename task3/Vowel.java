@@ -1,18 +1,19 @@
 package mainPackage;
 
 public class Vowel {
-    public static final char A = 'a';
-    public static final char E = 'e';
-    public static final char U = 'u';
-    public static final char O = 'o';
-    public static final char I = 'i';
-    public static final char Y = 'y';
-    public static final char BIG_A = 'A';
-    public static final char BIG_E = 'E';
-    public static final char BIG_U = 'U';
-    public static final char BIG_O = 'O';
-    public static final char BIG_I = 'I';
-    public static final char BIG_Y = 'Y';
+    private static final char A = 'a';
+    private static final char E = 'e';
+    private static final char U = 'u';
+    private static final char O = 'o';
+    private static final char I = 'i';
+    private static final char Y = 'y';
+    private static final char BIG_A = 'A';
+    private static final char BIG_E = 'E';
+    private static final char BIG_U = 'U';
+    private static final char BIG_O = 'O';
+    private static final char BIG_I = 'I';
+    private static final char BIG_Y = 'Y';
+    private static final int ERR = -1;
     
     public static boolean isVowelByChar(char value){
         if (value == A || value == E || value == U || value == Y || value == O ||
@@ -67,5 +68,22 @@ public class Vowel {
             default: return false;
         }
     }
+
+    public static boolean isVowelByString(char value){
+        String stringOfVowels = "aAuUiIeEoOyY";
+        if (stringOfVowels.contains(value+"")){
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isVowelByString2(char value){
+        String stringOfVowels = "aAuUiIeEoOyY";
+        if (stringOfVowels.indexOf(value) != ERR){
+            return true;
+        }
+        return false;
+    }
+
 
 }

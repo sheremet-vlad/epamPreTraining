@@ -32,6 +32,8 @@ public class Task03 {
         System.out.println(Vowel.isVowelByChar2(letter));
         System.out.println(Vowel.isVowelByCode((int)letter));
         System.out.println(Vowel.isVowelByCode2((int)letter));
+        System.out.println(Vowel.isVowelByString(letter));
+        System.out.println(Vowel.isVowelByString2(letter));
 
         //task4
         int moodCount = 3;
