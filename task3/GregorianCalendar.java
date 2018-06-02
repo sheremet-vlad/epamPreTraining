@@ -12,13 +12,13 @@
 package mainPackage;
 
 public class GregorianCalendar {
-    private static final int AUGUST = 8;
-    private static final int DECEMBER = 12;
-    private static final int MAX_DAY_FOR_FEBRUARY = 29;
-    private static final int MAX_DAY_TO_SHORT_MONTH = 31; //short - moths, which consist of 30 days
-    private static final int MAX_DAY_TO_LONG_MONTH = 32;  //short - moths, which consist of 31 days
-
     public static String defineNextDate(int dd, int mm, int yyyy){
+        final int AUGUST = 8;
+        final int DECEMBER = 12;
+        final int MAX_DAY_FOR_FEBRUARY = 29;
+        final int MAX_DAY_TO_SHORT_MONTH = 31; //short - moths, which consist of 30 days
+        final int MAX_DAY_TO_LONG_MONTH = 32;  //short - moths, which consist of 31 days
+
         dd++;
 
         if (dd == MAX_DAY_FOR_FEBRUARY){

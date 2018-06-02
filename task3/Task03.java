@@ -21,9 +21,10 @@ public class Task03 {
 
         //task2
         int age = 300;
+        int heeadsCount = Dragon.defineCountHeads(age);
         System.out.println("\ntask02");
-        System.out.println(Dragon.defineCountHeads(age) + " " +
-                            Dragon.defineCountEyes(age));
+        System.out.println(heeadsCount + " " +
+                            Dragon.defineCountEyes(heeadsCount));
 
         //task3
         char letter = 'a';
