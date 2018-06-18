@@ -25,13 +25,11 @@ public class Coin {
         Random random = new Random();
 
         for (int i = 0; i < tossCount; i++) {
-            if (random.nextInt(MAX_VALUE) == TAIL_VALUE) {
+            if (random.nextBoolean()) {
                 tails++;
-            } else {
-                heads++;
             }
         }
 
-        return "решек - " + tails + ", орел -" + heads;
+        return "решек - " + tails + ", орел -" + (tossCount - tails);
     }
 }

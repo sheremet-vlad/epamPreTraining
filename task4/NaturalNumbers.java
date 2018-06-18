@@ -46,19 +46,33 @@ public class NaturalNumbers {
 
     //method check simple numbers
     public static boolean isSimple(int number){
-        for (int i = 2; i < number; i++) {
-            if (number % i == 0){
-                return false;
-            }
+        boolean flag = true;
+        if (number < 0){
+            flag = false;
+        } else if (number == 2) {
+            flag = true;
+        } else if (number % 2 == 0) {
+            flag = false;
         }
-        return true;
+
+        if (flag) {
+            int size = (int)Math.sqrt(number);
+            for (int i = 3; i < size; i += 2) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+
+        }
+        return flag;
     }
 
     //method find all simple divisors
     public static String getSimpleDivisors(int number){
         StringBuffer result = new StringBuffer("");
+        int size = (int)Math.sqrt(number);
 
-        for (int i = 2; i < number; i++) {
+        for (int i = 2; i < size; i++) {
             if (number % i == 0){
                 if (isSimple(i)){
                     result.append(i+" ");
