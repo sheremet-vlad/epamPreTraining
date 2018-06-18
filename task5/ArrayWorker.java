@@ -52,13 +52,13 @@ public class ArrayWorker {
 
         checkArraySize(array);
 
-        int sum = 0;
+        double sum = 0;
 
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
         }
 
-        return (double)sum / array.length;
+        return sum / array.length;
     }
 
 
@@ -83,7 +83,9 @@ public class ArrayWorker {
 
         checkArraySize(array);
 
-        for (int i = 0; i < array.length -1; i++) {
+        int size = array.length - 1;
+
+        for (int i = 0; i < size; i++) {
             if (array[i] > array[i + 1]){
                 return false;
             }
@@ -97,7 +99,9 @@ public class ArrayWorker {
 
         checkArraySize(array);
 
-        for (int i = 0; i < array.length - 1; i++) {
+        int size = array.length - 1;
+
+        for (int i = 0; i < size; i++) {
             if (array[i] < array[i + 1]){
                 return false;
             }
@@ -111,7 +115,9 @@ public class ArrayWorker {
 
         checkArraySize(array);
 
-        for (int i = 1; i < array.length - 1 ; i++) {
+        int size = array.length - 1;
+
+        for (int i = 1; i < size; i++) {
             if (array[i] < array[i-1] && array[i] < array[i+1]) {
                 return i;
             }
@@ -125,7 +131,9 @@ public class ArrayWorker {
 
         checkArraySize(array);
 
-        for (int i = 1; i < array.length - 1 ; i++) {
+        int size = array.length - 1;
+
+        for (int i = 1; i < size; i++) {
             if (array[i] > array[i - 1] && array[i] > array[i+1]) {
                 return i;
             }
@@ -139,7 +147,9 @@ public class ArrayWorker {
 
         checkArraySize(array);
 
-        for (int i = 0; i < array.length / 2; i++) {
+        int size = array.length / 2;
+
+        for (int i = 0; i < size; i++) {
             array[i] ^= array[array.length - i - 1];  //minus 1, because first element has index 0
             array[array.length - i - 1] ^= array[i];
             array[i] ^= array[array.length - i - 1];
