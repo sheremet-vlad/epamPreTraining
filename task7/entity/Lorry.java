@@ -1,4 +1,4 @@
-package entity;
+package by.epam.preTraining.vladSheremet.tasks.task7.entity;
 
 public class Lorry extends Vehicle {
 
@@ -6,6 +6,7 @@ public class Lorry extends Vehicle {
 
     public Lorry(String mark, int cost, String model, int maxWeight) {
         super(mark, cost, model);
+        this.maxWeight = maxWeight;
 
     }
 

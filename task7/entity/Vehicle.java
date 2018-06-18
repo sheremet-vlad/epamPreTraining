@@ -1,8 +1,4 @@
-package entity;
-
-import com.sun.jdi.connect.Connector;
-
-import java.util.Objects;
+package by.epam.preTraining.vladSheremet.tasks.task7.entity;
 
 public abstract class Vehicle {
     private String mark;

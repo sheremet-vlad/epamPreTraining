@@ -1,4 +1,4 @@
-package entity;
+package by.epam.preTraining.vladSheremet.tasks.task7.entity;
 
 public class Car extends Vehicle{
 
@@ -6,6 +6,7 @@ public class Car extends Vehicle{
 
     public Car(String mark, int cost, String model, int maxPassenger) {
         super(mark, cost, model);
+        this.maxPassenger = maxPassenger;
 
     }
 
