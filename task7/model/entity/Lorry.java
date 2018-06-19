@@ -1,13 +1,21 @@
-package by.epam.preTraining.vladSheremet.tasks.task7.entity;
+package by.epam.preTraining.vladSheremet.tasks.task7.model.entity;
 
 public class Lorry extends Vehicle {
 
     private int maxWeight;
 
+    public Lorry() {
+
+    }
+
     public Lorry(String mark, int cost, String model, int maxWeight) {
         super(mark, cost, model);
         this.maxWeight = maxWeight;
+    }
 
+    public Lorry(Lorry lorry) {
+        super(lorry.getMark(),lorry.getCost(),lorry.getModel());
+        this.maxWeight = lorry.getMaxWeight();
     }
 
     public int getMaxWeight() {

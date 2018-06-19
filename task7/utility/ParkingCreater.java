@@ -1,9 +1,8 @@
 package by.epam.preTraining.vladSheremet.tasks.task7.utility;
 
-import by.epam.preTraining.vladSheremet.tasks.task7.entity.Car;
-import by.epam.preTraining.vladSheremet.tasks.task7.entity.Lorry;
-import by.epam.preTraining.vladSheremet.tasks.task7.entity.Vehicle;
-import by.epam.preTraining.vladSheremet.tasks.task7.entity.container.ParkingPlace;
+import by.epam.preTraining.vladSheremet.tasks.task7.model.logic.entity.Car;
+import by.epam.preTraining.vladSheremet.tasks.task7.model.logic.entity.Lorry;
+import by.epam.preTraining.vladSheremet.tasks.task7.model.logic.entity.container.ParkingPlace;
 
 import java.util.ArrayList;
 import java.util.Random;

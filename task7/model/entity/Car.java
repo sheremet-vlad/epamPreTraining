@@ -1,13 +1,24 @@
-package by.epam.preTraining.vladSheremet.tasks.task7.entity;
+package by.epam.preTraining.vladSheremet.tasks.task7.model.entity;
 
-public class Car extends Vehicle{
+import by.epam.preTraining.vladSheremet.tasks.task7.model.entity.Vehicle;
+
+public class Car extends Vehicle {
 
     private int maxPassenger;
+
+    public Car() {
+
+    }
 
     public Car(String mark, int cost, String model, int maxPassenger) {
         super(mark, cost, model);
         this.maxPassenger = maxPassenger;
 
+    }
+
+    public Car(Car car) {
+        super(car.getMark(), car.getCost(), car.getModel());
+        this.maxPassenger = car.getMaxPassenger();
     }
 
     public int getMaxPassenger() {

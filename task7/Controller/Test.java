@@ -1,10 +1,9 @@
 package by.epam.preTraining.vladSheremet.tasks.task7.Controller;
 
-import by.epam.preTraining.vladSheremet.tasks.task7.entity.Car;
-import by.epam.preTraining.vladSheremet.tasks.task7.entity.Lorry;
 import by.epam.preTraining.vladSheremet.tasks.task7.utility.ParkingCreater;
+import by.epam.preTraining.vladSheremet.tasks.task7.view.View;
 import logic.ParkingSetting;
-import by.epam.preTraining.vladSheremet.tasks.task7.entity.container.ParkingPlace;
+import by.epam.preTraining.vladSheremet.tasks.task7.model.logic.entity.container.ParkingPlace;
 
 public class Test {
     public static void main(String[] args) {
@@ -12,25 +11,23 @@ public class Test {
         ParkingPlace parkingPlace = new ParkingPlace();
         ParkingCreater.createParking(parkingPlace, size);
 
-        System.out.println(parkingPlace.toString());
+        View.println(parkingPlace.toString());
 
-        System.out.println(ParkingSetting.getCheapestCar(parkingPlace).toString());
+        View.println(ParkingSetting.getCheapestCar(parkingPlace).toString());
 
-        System.out.println(ParkingSetting.getTotalCost(parkingPlace));
+        View.println(ParkingSetting.getTotalCost(parkingPlace));
 
-        System.out.println(parkingPlace.isEmpty());
+        View.println(parkingPlace.isEmpty());
 
-        System.out.println(parkingPlace.getSize());
+        View.println(parkingPlace.getSize());
 
-        System.out.println(parkingPlace.getVehicle(0));
-
-        //System.out.println(parkingPlace.isContains(car));
+        View.println(parkingPlace.getVehicle(0));
 
         parkingPlace.removeVehicle(0);
-        System.out.println(parkingPlace.toString());
+        View.println(parkingPlace.toString());
 
         parkingPlace.clear();
-        System.out.println(parkingPlace.toString());
+        View.println(parkingPlace.toString());
     }
 
 

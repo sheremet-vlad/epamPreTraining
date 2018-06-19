@@ -1,6 +1,6 @@
-package by.epam.preTraining.vladSheremet.tasks.task7.entity;
+package by.epam.preTraining.vladSheremet.tasks.task7.model.entity;
 
-public abstract class Vehicle {
+public class Vehicle {
     private String mark;
     private int cost;
     private String model;
@@ -13,6 +13,12 @@ public abstract class Vehicle {
         setCost(cost);
         setMark(mark);
         setModel(model);
+    }
+
+    public Vehicle(Vehicle vehicle){
+        setCost(vehicle.cost);
+        setMark(vehicle.mark);
+        setModel(vehicle.model);
     }
 
     public String getMark() {

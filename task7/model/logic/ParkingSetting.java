@@ -1,7 +1,7 @@
 package logic;
 
-import by.epam.preTraining.vladSheremet.tasks.task7.entity.Vehicle;
-import by.epam.preTraining.vladSheremet.tasks.task7.entity.container.ParkingPlace;
+import by.epam.preTraining.vladSheremet.tasks.task7.model.logic.entity.Vehicle;
+import by.epam.preTraining.vladSheremet.tasks.task7.model.logic.entity.container.ParkingPlace;
 
 public class ParkingSetting {
     public static int getTotalCost(ParkingPlace arr) {

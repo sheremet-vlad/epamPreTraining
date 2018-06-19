@@ -1,10 +1,12 @@
-package by.epam.preTraining.vladSheremet.tasks.task7.entity.container;
+package by.epam.preTraining.vladSheremet.tasks.task7.model.entity.container;
 
-import by.epam.preTraining.vladSheremet.tasks.task7.entity.Vehicle;
+import by.epam.preTraining.vladSheremet.tasks.task7.model.entity.Vehicle;
+import by.epam.preTraining.vladSheremet.tasks.task7.model.entity.container.intarface.Listable;
 
 import java.util.Arrays;
 
-public class FixedParkingPlace extends ParkingPlace {
+public class FixedParkingPlace extends ParkingPlace implements Listable {
+
     private final int MAX_SIZE = 20;
     @Override
     public boolean addVehicles(Vehicle... newVehicle){
