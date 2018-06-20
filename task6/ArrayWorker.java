@@ -18,7 +18,7 @@ public class ArrayWorker {
 
     public static double findMinValue(double[][] array) {
 
-        if (!checkArraySize(array)){
+        if (checkArraySize(array)){
             return ERROR_VALUE;
         }
 
@@ -38,7 +38,7 @@ public class ArrayWorker {
 
     public static double findMaxValue(double[][] array) {
 
-        if (!checkArraySize(array)){
+        if (checkArraySize(array)){
             return ERROR_VALUE;
         }
 
@@ -59,7 +59,7 @@ public class ArrayWorker {
 
     public static double calcAverageArithm(double[][] array) {
 
-        if (!checkArraySize(array)){
+        if (checkArraySize(array)){
             return ERROR_VALUE;
         }
 
@@ -79,7 +79,7 @@ public class ArrayWorker {
 
     public static double calcAverageGeom(double[][] array) {
 
-        if (!checkArraySize(array)){
+        if (checkArraySize(array)){
             return ERROR_VALUE;
         }
 
@@ -103,7 +103,7 @@ public class ArrayWorker {
 
     public static boolean checkAscending(double[][] array) {
 
-        if (!checkArraySize(array)){
+        if (checkArraySize(array)){
             return false;
         }
 
@@ -123,7 +123,7 @@ public class ArrayWorker {
 
     public static boolean checkDecrease(double[][] array) {
 
-        if (!checkArraySize(array)){
+        if (checkArraySize(array)){
             return false;
         }
 
@@ -143,7 +143,7 @@ public class ArrayWorker {
 
     public static String findLocalMinIndex(double[][] array) {
 
-        if (!checkArraySize(array)){
+        if (checkArraySize(array)){
             return ELEMENT_NOT_FOUND;
         }
 
@@ -166,7 +166,7 @@ public class ArrayWorker {
 
     public static String findLocalMaxIndex(double[][] array) {
 
-        if (!checkArraySize(array)){
+        if (checkArraySize(array)){
             return ELEMENT_NOT_FOUND;
         }
 
@@ -189,7 +189,7 @@ public class ArrayWorker {
 
     public static double[][] reverseNotSquare(double[][] arr) {
 
-        if (!checkArraySize(arr)){
+        if (checkArraySize(arr)){
             return arr;
         }
 
@@ -210,7 +210,7 @@ public class ArrayWorker {
 
     public static void reverseSquare(double[][] arr) {
 
-        if (!checkArraySize(arr)){
+        if (checkArraySize(arr)){
             return;
         }
 
@@ -240,17 +240,17 @@ public class ArrayWorker {
     }
 
     private static boolean checkArraySize(double[][] array) {
-        boolean flag = true;
+        boolean flag = false;
         if (array.length != 0){
             for (int i = 0; i < array.length; i++) {
                 if (array[i].length  != 0){
-                    flag = false;
+                    flag = true;
                     break;
                 }
             }
         }
         else {
-            flag = false;
+            flag = true;
         }
 
         return flag;
