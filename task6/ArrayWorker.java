@@ -101,46 +101,6 @@ public class ArrayWorker {
     }
 
 
-    public static boolean checkAscending(double[][] array) {
-
-        if (checkArraySize(array)){
-            return false;
-        }
-
-        int arrLength = array.length - 1;
-
-        for (int i = 0; i < arrLength; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                if (array[i][j] > array[i][j + 1]){
-                    return false;
-                }
-            }
-        }
-
-        return true;
-    }
-
-
-    public static boolean checkDecrease(double[][] array) {
-
-        if (checkArraySize(array)){
-            return false;
-        }
-
-        int arrLength = array.length - 1;
-
-        for (int i = 0; i < arrLength; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                if (array[i][j] < array[i][j + 1]){
-                    return false;
-                }
-            }
-        }
-
-        return true;
-    }
-
-
     public static String findLocalMinIndex(double[][] array) {
 
         if (checkArraySize(array)){
