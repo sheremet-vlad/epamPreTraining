@@ -16,9 +16,11 @@ public class ArrayWorker {
     private static final int ERROR_VALUE = -1;
     private static final int ELEMENT_NOT_FOUND = -1;
 
-    public static int getMinValue(int[] array) {
+    public static int findMinValue(int[] array) {
 
-        checkArraySize(array);
+        if (checkArraySize(array)) {
+            return ERROR_VALUE;
+        }
 
         int minValue = array[0];
 
@@ -32,9 +34,11 @@ public class ArrayWorker {
     }
 
 
-    public static int getMaxValue(int[] array) {
+    public static int findMaxValue(int[] array) {
 
-        checkArraySize(array);
+        if (checkArraySize(array)) {
+            return ERROR_VALUE;
+        }
 
         int maxValue = array[0];
 
@@ -48,9 +52,11 @@ public class ArrayWorker {
     }
 
 
-    public static double getAverageArithmetic(int[] array) {
+    public static double calcAverageArithm(int[] array) {
 
-        checkArraySize(array);
+        if (checkArraySize(array)) {
+            return ERROR_VALUE;
+        }
 
         double sum = 0;
 
@@ -62,9 +68,11 @@ public class ArrayWorker {
     }
 
 
-    public static double getAverageGeometry(int[] array) {
+    public static double calcAverageGeom(int[] array) {
 
-        checkArraySize(array);
+        if (checkArraySize(array)) {
+            return ERROR_VALUE;
+        }
 
         double result = 1.;
 
@@ -81,7 +89,9 @@ public class ArrayWorker {
 
     public static boolean checkAscending(int[] array) {
 
-        checkArraySize(array);
+        if (checkArraySize(array)) {
+            return false;
+        }
 
         int size = array.length - 1;
 
@@ -97,7 +107,9 @@ public class ArrayWorker {
 
     public static boolean checkDecrease(int[] array) {
 
-        checkArraySize(array);
+        if (checkArraySize(array)) {
+            return false;
+        }
 
         int size = array.length - 1;
 
@@ -111,9 +123,11 @@ public class ArrayWorker {
     }
 
 
-    public static int getLocalMinIndex(int[] array) {
+    public static int findLocalMinIndex(int[] array) {
 
-        checkArraySize(array);
+        if (checkArraySize(array)) {
+            return ERROR_VALUE;
+        }
 
         int size = array.length - 1;
 
@@ -127,9 +141,11 @@ public class ArrayWorker {
     }
 
 
-    public static int getLocalMaxIndex(int[] array) {
+    public static int findLocalMaxIndex(int[] array) {
 
-        checkArraySize(array);
+        if (checkArraySize(array)) {
+            return ERROR_VALUE;
+        }
 
         int size = array.length - 1;
 
@@ -145,7 +161,9 @@ public class ArrayWorker {
 
     public static void reverse(int[] array) {
 
-        checkArraySize(array);
+        if (checkArraySize(array)) {
+            return;
+        }
 
         int size = array.length / 2;
 
@@ -157,10 +175,12 @@ public class ArrayWorker {
     }
 
 
-    public static void checkArraySize(int[] array) {
+    public static boolean checkArraySize(int[] array) {
         if (array.length == 0 ) {
-            throw new IndexOutOfBoundsException("incorrect array size");
+            return true;
         }
+
+        return false;
     }
 
 }
