@@ -1,9 +1,9 @@
 package by.epam.preTraining.vladSheremet.tasks.task7.Controller;
 
+import by.epam.preTraining.vladSheremet.tasks.task7.model.entity.container.ParkingPlace;
+import by.epam.preTraining.vladSheremet.tasks.task7.model.logic.ParkingSetting;
 import by.epam.preTraining.vladSheremet.tasks.task7.utility.ParkingCreater;
 import by.epam.preTraining.vladSheremet.tasks.task7.view.View;
-import logic.ParkingSetting;
-import by.epam.preTraining.vladSheremet.tasks.task7.model.logic.entity.container.ParkingPlace;
 
 public class Test {
     public static void main(String[] args) {

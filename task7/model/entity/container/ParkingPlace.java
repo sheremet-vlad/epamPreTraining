@@ -107,8 +107,11 @@ public class ParkingPlace implements Listable {
     public String toString() {
         StringBuilder outString = new StringBuilder();
         outString.append("ParkingPlace:\n");
-        for (Vehicle temp : vehicles  ) {
-            outString.append(temp.toString());
+
+        int size = this.getSize();
+
+        for (int i = 0; i < size; i++) {
+            outString.append(this.getVehicle(i).toString());
             outString.append("\n");
         }
 
