@@ -16,9 +16,11 @@ public class ArrayWorker {
     private static final int ERROR_VALUE = -1;
     private static final String ELEMENT_NOT_FOUND = "-1";
 
-    public static double getMinValue(double[][] array) {
+    public static double findMinValue(double[][] array) {
 
-        checkArraySize(array);
+        if (!checkArraySize(array)){
+            return ERROR_VALUE;
+        }
 
         double minValue = array[0][0];
 
@@ -34,9 +36,11 @@ public class ArrayWorker {
     }
 
 
-    public static double getMaxValue(double[][] array) {
+    public static double findMaxValue(double[][] array) {
 
-        checkArraySize(array);
+        if (!checkArraySize(array)){
+            return ERROR_VALUE;
+        }
 
         double maxValue = array[0][0];
 
@@ -53,17 +57,19 @@ public class ArrayWorker {
     }
 
 
-    public static double getAverageArithmetic(double[][] array) {
+    public static double calcAverageArithm(double[][] array) {
 
-        checkArraySize(array);
+        if (!checkArraySize(array)){
+            return ERROR_VALUE;
+        }
 
         double sum = 0;
         int countElement = 0;
 
         for (int i = 0; i < array.length; i++) {
+            countElement += array[i].length;
             for (int j = 0; j < array[i].length; j++) {
                 sum += array[i][j];
-                countElement++;
             }
         }
 
@@ -71,31 +77,35 @@ public class ArrayWorker {
     }
 
 
-    public static double getAverageGeometry(double[][] array) {
+    public static double calcAverageGeom(double[][] array) {
 
-        checkArraySize(array);
+        if (!checkArraySize(array)){
+            return ERROR_VALUE;
+        }
 
         double result = 1.;
-        double countElemnt = 0;
+        double countElement = 0;
 
         for (int i = 0; i < array.length; i++) {
+            countElement += array[i].length;
             for (int j = 0; j < array[i].length; j++) {
                 if (array[i][j] < 0){
                     return ERROR_VALUE;
                 }
                 result *= array[i][j];
-                countElemnt++;
             }
 
         }
 
-        return Math.pow(result, 1.0 / countElemnt);
+        return Math.pow(result, 1.0 / countElement);
     }
 
 
     public static boolean checkAscending(double[][] array) {
 
-        checkArraySize(array);
+        if (!checkArraySize(array)){
+            return false;
+        }
 
         int arrLength = array.length - 1;
 
@@ -113,7 +123,9 @@ public class ArrayWorker {
 
     public static boolean checkDecrease(double[][] array) {
 
-        checkArraySize(array);
+        if (!checkArraySize(array)){
+            return false;
+        }
 
         int arrLength = array.length - 1;
 
@@ -129,9 +141,11 @@ public class ArrayWorker {
     }
 
 
-    public static String getLocalMinIndex(double[][] array) {
+    public static String findLocalMinIndex(double[][] array) {
 
-        checkArraySize(array);
+        if (!checkArraySize(array)){
+            return ELEMENT_NOT_FOUND;
+        }
 
         int arrLength = array.length - 1;
         int arrSecondLength;
@@ -150,9 +164,11 @@ public class ArrayWorker {
     }
 
 
-    public static String getLocalMaxIndex(double[][] array) {
+    public static String findLocalMaxIndex(double[][] array) {
 
-        checkArraySize(array);
+        if (!checkArraySize(array)){
+            return ELEMENT_NOT_FOUND;
+        }
 
         int arrLength = array.length - 1;
         int arrSecondLength;
@@ -173,7 +189,9 @@ public class ArrayWorker {
 
     public static double[][] reverseNotSquare(double[][] arr) {
 
-        checkArraySize(arr);
+        if (!checkArraySize(arr)){
+            return arr;
+        }
 
         if (checkArrToSquare(arr)){
             return new double[0][0];
@@ -192,7 +210,9 @@ public class ArrayWorker {
 
     public static void reverseSquare(double[][] arr) {
 
-        checkArraySize(arr);
+        if (!checkArraySize(arr)){
+            return;
+        }
 
         if (!checkArrToSquare(arr)) {
             throw new IllegalArgumentException("Not a square matrix");
@@ -219,10 +239,21 @@ public class ArrayWorker {
         return true;
     }
 
-    public static void checkArraySize(double[][] array) {
-        if (array.length == 0 ) {
-            throw new IndexOutOfBoundsException("incorrect array size");
+    private static boolean checkArraySize(double[][] array) {
+        boolean flag = true;
+        if (array.length != 0){
+            for (int i = 0; i < array.length; i++) {
+                if (array[i].length  != 0){
+                    flag = false;
+                    break;
+                }
+            }
         }
+        else {
+            flag = false;
+        }
+
+        return flag;
     }
 
 }
