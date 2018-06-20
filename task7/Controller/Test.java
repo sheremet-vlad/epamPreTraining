@@ -1,4 +1,4 @@
-package by.epam.preTraining.vladSheremet.tasks.task7.Controller;
+package by.epam.preTraining.vladSheremet.tasks.task7.controller;
 
 import by.epam.preTraining.vladSheremet.tasks.task7.model.entity.container.ParkingPlace;
 import by.epam.preTraining.vladSheremet.tasks.task7.model.logic.ParkingSetting;
