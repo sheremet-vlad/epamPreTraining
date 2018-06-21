@@ -176,7 +176,7 @@ public class ArrayWorker {
 
 
     public static boolean checkArraySize(int[] array) {
-        if (array.length == 0 ) {
+        if (array == null || array.length == 0 ) {
             return true;
         }
 

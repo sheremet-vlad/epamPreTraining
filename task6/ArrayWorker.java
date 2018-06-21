@@ -170,7 +170,7 @@ public class ArrayWorker {
             return;
         }
 
-        if (checkArrToSquare(arr)) {
+        if (isNotSquare(arr)) {
             return;
         }
 
@@ -186,7 +186,7 @@ public class ArrayWorker {
         }
     }
 
-    public static boolean checkArrToSquare(double[][] array) {
+    public static boolean isNotSquare(double[][] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i].length != array.length){
                 return true;
@@ -198,7 +198,7 @@ public class ArrayWorker {
 
     private static boolean checkArraySize(double[][] array) {
         boolean flag = false;
-        if (array.length != 0){
+        if (array != null && array.length != 0){
             for (int i = 0; i < array.length; i++) {
                 if (array[i].length  == 0){
                     flag = true;
