@@ -200,7 +200,7 @@ public class ArrayWorker {
         boolean flag = false;
         if (array != null && array.length != 0){
             for (int i = 0; i < array.length; i++) {
-                if (array[i].length  == 0){
+                if (array[i] null || array[i].length  == 0){
                     flag = true;
                     break;
                 }
