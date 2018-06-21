@@ -11,16 +11,12 @@ public class Lorry extends Vehicle {
     }
 
     public Lorry(String mark, int cost, String model, int maxWeight) {
-        setMark(mark);
-        setCost(cost);
-        setModel(model);
+        super(mark,cost,model);
         setMaxWeight(maxWeight);
     }
 
     public Lorry(Lorry lorry) {
-        setMark(lorry.getMark());
-        setCost(lorry.getCost());
-        setModel(lorry.getModel());
+        super(lorry);
         setMaxWeight(lorry.getMaxWeight());
     }
 

@@ -10,20 +10,29 @@ public class Car extends Vehicle {
 
     public Car() {
         super();
+        this.maxPassenger = DEFAULT_PASSENGER;
     }
 
     public Car(String mark, int cost, String model, int maxPassenger) {
-        setMark(mark);
-        setCost(cost);
-        setModel(model);
-        setMaxPassenger(maxPassenger);
+        super(mark,cost,model);
+
+        if (isValidValue(maxPassenger)){
+            this.maxPassenger = maxPassenger;
+        }
+        else {
+            this.maxPassenger = DEFAULT_PASSENGER;
+        }
     }
 
     public Car(Car car) {
-        setMark(car.getMark());
-        setCost(car.getCost());
-        setModel(car.getModel());
-        setMaxPassenger(car.getMaxPassenger());
+        super(car);
+
+        if (isValidValue(car.getMaxPassenger())){
+            this.maxPassenger = car.getMaxPassenger();
+        }
+        else {
+            this.maxPassenger = DEFAULT_PASSENGER;
+        }
     }
 
     public int getMaxPassenger() {

@@ -16,15 +16,35 @@ public class Vehicle {
     }
 
     public Vehicle(String mark, int cost, String model) {
-        setCost(cost);
-        setMark(mark);
-        setModel(model);
+        initVariables(mark,cost,model);
     }
 
     public Vehicle(Vehicle vehicle){
-        setCost(vehicle.cost);
-        setMark(vehicle.mark);
-        setModel(vehicle.model);
+        initVariables(vehicle.getMark(),vehicle.getCost(),
+                        vehicle.getModel());
+    }
+
+    private void initVariables( String mark,int cost, String model){
+        if (isValidValue(cost)){
+            this.cost = cost;
+        }
+        else {
+            this.cost = DEFAULT_COST;
+        }
+
+        if (isValidString(model)) {
+            this.model = model;
+        }
+        else {
+            this.model = DEFAULT_MODEL;
+        }
+
+        if (isValidString(mark)) {
+            this.mark = mark;
+        }
+        else {
+            this.mark = DEFAULT_MARK;
+        }
     }
 
     public String getMark() {
