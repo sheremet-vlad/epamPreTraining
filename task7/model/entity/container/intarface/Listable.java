@@ -8,6 +8,8 @@ public interface Listable  {
 
     boolean addVehicles(Vehicle... newVehicle);
 
+    void changeVehicle(Vehicle vehicle, int index);
+
     boolean isEmpty();
 
     void removeVehicle(int index);

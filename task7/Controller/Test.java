@@ -3,6 +3,8 @@ package by.epam.preTraining.vladSheremet.tasks.task7.controller;
 import by.epam.preTraining.vladSheremet.tasks.task7.model.entity.ParkingManager;
 import by.epam.preTraining.vladSheremet.tasks.task7.model.entity.container.ParkingPlace;
 import by.epam.preTraining.vladSheremet.tasks.task7.model.logic.ParkingSetting;
+import by.epam.preTraining.vladSheremet.tasks.task7.model.logic.Searcher;
+import by.epam.preTraining.vladSheremet.tasks.task7.model.logic.Sorter;
 import by.epam.preTraining.vladSheremet.tasks.task7.utility.ParkingCreater;
 import by.epam.preTraining.vladSheremet.tasks.task7.view.View;
 
@@ -31,13 +33,21 @@ public class Test {
         parkingPlace.clear();
         View.println(parkingPlace.toString());
 
-        System.out.println("FIXED PARKING PLACE");
+        View.println("FIXED PARKING PLACE");
         int size1 = 21;
         parkingManager = new ParkingManager(true);
         parkingPlace = parkingManager.getParking();
 
         ParkingCreater.createParking(parkingPlace, size1); // parking will have only 20 vehicles
 
+        View.println(parkingPlace.toString());
+        View.println("\n");
+
+        View.println(Searcher.findVehicleByCost(parkingPlace,
+                        parkingPlace.getVehicle(4).getCost()));
+        
+        View.println("\n");
+        Sorter.sortShaker(parkingPlace);
         View.println(parkingPlace.toString());
     }
 }

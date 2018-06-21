@@ -38,6 +38,14 @@ public class ParkingPlace implements Listable {
     }
 
     @Override
+    public void changeVehicle(Vehicle vehicle, int index) {
+        if (index < size && index >= 0) {
+            vehicles[index] = vehicle;
+        }
+    }
+
+
+    @Override
     public boolean isEmpty() {
         return size == 0;
     }
@@ -103,10 +111,11 @@ public class ParkingPlace implements Listable {
         this.vehicles = vehicles;
     }
 
+
     @Override
     public String toString() {
         StringBuilder outString = new StringBuilder();
-        outString.append("ParkingPlace:\n");
+        outString.append("Car on parking place:\n");
 
         int size = this.getSize();
 
@@ -154,5 +163,4 @@ public class ParkingPlace implements Listable {
         return  true;
 
     }
-
 }

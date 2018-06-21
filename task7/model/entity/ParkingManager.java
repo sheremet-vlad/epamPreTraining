@@ -31,4 +31,36 @@ public class ParkingManager {
     public void setParking(ParkingPlace parking) {
         this.parking = parking;
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode() + parking.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        ParkingManager parkingManager = (ParkingManager) obj;
+
+        if (!parking.equals(parkingManager.getParking())){
+            return false;
+        }
+
+        return  true;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder outString = new StringBuilder();
+        outString.append("ParkingManager:\n");
+        outString.append(parking.toString());
+        return outString+"";
+    }
+
 }
