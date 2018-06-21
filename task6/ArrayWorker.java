@@ -147,14 +147,10 @@ public class ArrayWorker {
     }
 
 
-    public static double[][] reverseNotSquare(double[][] arr) {
+    public static double[][] transpose(double[][] arr) {
 
         if (checkArraySize(arr)){
             return arr;
-        }
-
-        if (checkArrToSquare(arr)){
-            return new double[0][0];
         }
 
         double[][] arrT = new double[arr[0].length][arr.length];
@@ -168,21 +164,22 @@ public class ArrayWorker {
         return arrT;
     }
 
-    public static void reverseSquare(double[][] arr) {
+    public static void transposeSquare(double[][] arr) {
 
         if (checkArraySize(arr)){
             return;
         }
 
-        if (!checkArrToSquare(arr)) {
-            throw new IllegalArgumentException("Not a square matrix");
+        if (checkArrToSquare(arr)) {
+            return;
         }
+
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr[i].length; j++) {
                 if (i != j) {
                     arr[i][j] = arr[i][j] + arr[j][i];
-                    arr[j][i] = arr[j][i] - arr[i][j];
+                    arr[j][i] = arr[i][j] - arr[j][i];
                     arr[i][j] = arr[i][j] - arr[j][i];
                 }
             }
@@ -192,18 +189,18 @@ public class ArrayWorker {
     public static boolean checkArrToSquare(double[][] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i].length != array.length){
-                return false;
+                return true;
             }
         }
 
-        return true;
+        return false;
     }
 
     private static boolean checkArraySize(double[][] array) {
         boolean flag = false;
         if (array.length != 0){
             for (int i = 0; i < array.length; i++) {
-                if (array[i].length  != 0){
+                if (array[i].length  == 0){
                     flag = true;
                     break;
                 }

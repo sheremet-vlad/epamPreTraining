@@ -15,13 +15,15 @@ public class Task5 {
         System.out.printf("%.2f\n", ArrayWorker.calcAverageGeom(array));
         System.out.println(ArrayWorker.findLocalMinIndex(array));
         System.out.println(ArrayWorker.findLocalMaxIndex(array));
-        array = ArrayWorker.reverseNotSquare(array);
+        array = ArrayWorker.transpose(array);
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.print(array[i][j]+" ");
             }
             System.out.println();
         }
+
+        System.out.println();
 
         double[][] arr = new double[4][4];
         ArrayInitializer.rndInit(arr,1,20);
@@ -31,7 +33,15 @@ public class Task5 {
             }
             System.out.println();
         }
-        System.out.println();
+
+        ArrayWorker.transposeSquare(arr);
+        System.out.println("hi");
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
 
 
