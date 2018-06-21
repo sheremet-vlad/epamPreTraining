@@ -21,7 +21,7 @@ public class Lorry extends Vehicle {
         setMark(lorry.getMark());
         setCost(lorry.getCost());
         setModel(lorry.getModel());
-        this.maxWeight = lorry.getMaxWeight();
+        setMaxWeight(lorry.getMaxWeight());
     }
 
     public int getMaxWeight() {

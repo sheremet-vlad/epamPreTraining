@@ -16,7 +16,7 @@ public class Car extends Vehicle {
         setMark(mark);
         setCost(cost);
         setModel(model);
-        this.maxPassenger = maxPassenger;
+        setMaxPassenger(maxPassenger);
     }
 
     public Car(Car car) {
