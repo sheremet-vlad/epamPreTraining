@@ -32,7 +32,7 @@ public class Vehicle {
     }
 
     public void setMark(String mark) {
-        if (!mark.equals("")) {
+        if (isValidString(mark)) {
             this.mark = mark;
         }
         else {
@@ -45,7 +45,7 @@ public class Vehicle {
     }
 
     public void setCost(int cost) {
-        if (cost > 0) {
+        if (isValidValue(cost)) {
             this.cost = cost;
         }
         else {
@@ -58,12 +58,26 @@ public class Vehicle {
     }
 
     public void setModel(String model) {
-        if (!model.equals("")) {
+        if (isValidString(model)) {
             this.model = model;
         }
         else {
             this.model = DEFAULT_MODEL;
         }
+    }
+
+    protected boolean isValidString(String string){
+        if (string.equals("")){
+            return false;
+        }
+        return true;
+    }
+
+    protected boolean isValidValue(int value){
+        if (value < 0){
+            return false;
+        }
+        return true;
     }
 
     @Override

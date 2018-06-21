@@ -23,7 +23,7 @@ public class Car extends Vehicle {
         setMark(car.getMark());
         setCost(car.getCost());
         setModel(car.getModel());
-        this.maxPassenger = car.getMaxPassenger();
+        setMaxPassenger(car.getMaxPassenger());
     }
 
     public int getMaxPassenger() {
@@ -31,7 +31,7 @@ public class Car extends Vehicle {
     }
 
     public void setMaxPassenger(int maxPassenger) {
-        if (maxPassenger > 0) {
+        if (isValidValue(maxPassenger)) {
             this.maxPassenger = maxPassenger;
         }
         else {

@@ -29,7 +29,7 @@ public class Lorry extends Vehicle {
     }
 
     public void setMaxWeight(int maxWeight) {
-        if (maxWeight > 0) {
+        if (isValidValue(maxWeight)) {
             this.maxWeight = maxWeight;
         }
         else {
