@@ -35,9 +35,9 @@ public class Test {
         int size1 = 21;
         parkingManager = new ParkingManager(true);
         parkingPlace = parkingManager.getParking();
-        
+
         ParkingCreater.createParking(parkingPlace, size1); // parking will have only 20 vehicles
-        
+
         View.println(parkingPlace.toString());
     }
 }

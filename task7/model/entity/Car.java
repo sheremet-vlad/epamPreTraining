@@ -4,20 +4,25 @@ import by.epam.preTraining.vladSheremet.tasks.task7.model.entity.Vehicle;
 
 public class Car extends Vehicle {
 
+    private static final int DEFAULT_PASSENGER = 4;
+
     private int maxPassenger;
 
     public Car() {
-
+        super();
     }
 
     public Car(String mark, int cost, String model, int maxPassenger) {
-        super(mark, cost, model);
+        setMark(mark);
+        setCost(cost);
+        setModel(model);
         this.maxPassenger = maxPassenger;
-
     }
 
     public Car(Car car) {
-        super(car.getMark(), car.getCost(), car.getModel());
+        setMark(car.getMark());
+        setCost(car.getCost());
+        setModel(car.getModel());
         this.maxPassenger = car.getMaxPassenger();
     }
 
@@ -30,7 +35,7 @@ public class Car extends Vehicle {
             this.maxPassenger = maxPassenger;
         }
         else {
-            throw new IllegalArgumentException("max Passenger should be more, then 0");
+            this.maxPassenger = DEFAULT_PASSENGER;
         }
     }
 

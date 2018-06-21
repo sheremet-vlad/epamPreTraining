@@ -200,17 +200,16 @@ public class ArrayWorker {
         boolean flag = false;
         if (array != null && array.length != 0){
             for (int i = 0; i < array.length; i++) {
-                if (array[i] null || array[i].length  == 0){
-                    flag = true;
-                    break;
+                if (array[i] == null || array[i].length != array[1].length){
+                    return true;
                 }
             }
         }
         else {
-            flag = true;
+            return true;
         }
 
-        return flag;
+        return false;
     }
 
 }

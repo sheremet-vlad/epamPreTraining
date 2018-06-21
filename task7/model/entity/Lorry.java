@@ -2,19 +2,25 @@ package by.epam.preTraining.vladSheremet.tasks.task7.model.entity;
 
 public class Lorry extends Vehicle {
 
+    private static final int DEFAULT_WEIGHT = 5_000;
+
     private int maxWeight;
 
     public Lorry() {
-
+        super();
     }
 
     public Lorry(String mark, int cost, String model, int maxWeight) {
-        super(mark, cost, model);
-        this.maxWeight = maxWeight;
+        setMark(mark);
+        setCost(cost);
+        setModel(model);
+        setMaxWeight(maxWeight);
     }
 
     public Lorry(Lorry lorry) {
-        super(lorry.getMark(),lorry.getCost(),lorry.getModel());
+        setMark(lorry.getMark());
+        setCost(lorry.getCost());
+        setModel(lorry.getModel());
         this.maxWeight = lorry.getMaxWeight();
     }
 
@@ -27,7 +33,7 @@ public class Lorry extends Vehicle {
             this.maxWeight = maxWeight;
         }
         else {
-            throw new IllegalArgumentException("max weight should be more, then 0");
+            this.maxWeight  = DEFAULT_WEIGHT;
         }
     }
 

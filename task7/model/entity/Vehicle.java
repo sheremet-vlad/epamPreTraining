@@ -1,12 +1,18 @@
 package by.epam.preTraining.vladSheremet.tasks.task7.model.entity;
 
 public class Vehicle {
+    private static final String DEFAULT_MARK = "unclear";
+    private static final String DEFAULT_MODEL = "unclear";
+    private static final int DEFAULT_COST = 10_000;
+
     private String mark;
     private int cost;
     private String model;
 
     public Vehicle() {
-
+        this.cost = DEFAULT_COST;
+        this.model = DEFAULT_MODEL;
+        this.mark = DEFAULT_MARK;
     }
 
     public Vehicle(String mark, int cost, String model) {
@@ -30,7 +36,7 @@ public class Vehicle {
             this.mark = mark;
         }
         else {
-            throw new IllegalArgumentException("field mark should be not empty");
+            this.mark = DEFAULT_MARK;
         }
     }
 
@@ -43,7 +49,7 @@ public class Vehicle {
             this.cost = cost;
         }
         else {
-            throw new IllegalArgumentException("cost should be more, then 0");
+            this.cost = DEFAULT_COST;
         }
     }
 
@@ -56,7 +62,7 @@ public class Vehicle {
             this.model = model;
         }
         else {
-            throw new IllegalArgumentException("field mark should be not empty");
+            this.model = DEFAULT_MODEL;
         }
     }
 

@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class Task5 {
     public static void main(String[] args) {
+        int a[][] = new int[4][];
+        System.out.println(a[2].length);
         //task 5
         int n = 15;
         int m = 10;
