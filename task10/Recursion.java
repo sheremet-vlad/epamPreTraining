@@ -77,11 +77,8 @@ public class Recursion {
     }
 
     private static long recFindFibonacci(int num) {
-        if (num == FIRST_INDEX_FIB) {
+        if (num == FIRST_INDEX_FIB || num == SECOND_INDEX_FIB) {
             return FIRST_NUM_FIB;
-        }
-        if (num == SECOND_INDEX_FIB) {
-            return SECOND_NUM_FIB;
         }
         return recFindFibonacci(num - 1) + recFindFibonacci(num - 2);
     }
@@ -95,6 +92,9 @@ public class Recursion {
     }
 
     public static StringBuilder numberOfRemoving(int n, char a, char b, char c) {
+        if (n <= 0){
+            return new StringBuilder("Error");
+        }
         recTower(n,a,b,c);
         return removing;
     }
