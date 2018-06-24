@@ -17,6 +17,7 @@ public class Test {
         System.out.println(Recursion.calcNumberInPow(value,pow));
         System.out.println(Recursion.equals(b,c));
         System.out.println(Recursion.findFibonacci(d));
+        System.out.println(Recursion.numberOfRemoving(7,'a','b','c'));
     }
 
 

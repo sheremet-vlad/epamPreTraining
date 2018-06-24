@@ -18,6 +18,7 @@ public class Recursion {
     private static final int FIRST_NUM_FIB = 1;
     private static final int SECOND_INDEX_FIB = 2;
     private static final int SECOND_NUM_FIB = 1;
+    private static StringBuilder removing= new StringBuilder();
 
     public static int findDigitSum(int n) {
         n = n > 0 ? n : -n;
@@ -32,8 +33,11 @@ public class Recursion {
     }
 
     public static double calcNumberInPow(double num, int pow) {
-        if (pow < 0) {
+        if (pow < 0 || num == 0) {
             return 0;
+        }
+        if (pow == 0) {
+            return 1;
         }
         return recNumberPow(num, pow);
     }
@@ -80,5 +84,18 @@ public class Recursion {
             return SECOND_NUM_FIB;
         }
         return recFindFibonacci(num - 1) + recFindFibonacci(num - 2);
+    }
+
+    private static void recTower(int n, char a, char b, char c) {
+        if (n > 0) {
+            recTower(n - 1,a,b,c);
+            removing.append(a).append(" --> ").append(b).append("\n");
+            recTower(n - 1,c,b,a);
+        }
+    }
+
+    public static StringBuilder numberOfRemoving(int n, char a, char b, char c) {
+        recTower(n,a,b,c);
+        return removing;
     }
 }
