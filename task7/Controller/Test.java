@@ -45,9 +45,18 @@ public class Test {
 
         View.println(Searcher.findVehicleByCost(parkingPlace,
                         parkingPlace.getVehicle(4).getCost()));
-        
+
         View.println("\n");
+        View.println("Shaker sorter");
         Sorter.sortShaker(parkingPlace);
+        View.println(parkingPlace.toString());
+
+        View.println("Inserts sorter");
+        Sorter.sortInserts(parkingPlace);
+        View.println(parkingPlace.toString());
+
+        View.println("Selections sorter");
+        Sorter.sortSelections(parkingPlace);
         View.println(parkingPlace.toString());
     }
 }

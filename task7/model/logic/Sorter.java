@@ -26,9 +26,9 @@ public class Sorter {
                 break;
             }
 
-            for (int j = endIndex - 1; j > i; j--) {
+            for (int j = endIndex; j > i; j--) {
                 if (arr.getVehicle(j).getCost() > arr.getVehicle(j - 1).getCost()) {
-                    swap(j, j - 1, arr);
+                    swap(j,j - 1, arr);
                     isSortiong = false;
                 }
             }
@@ -36,6 +36,35 @@ public class Sorter {
             if (isSortiong) {
                 break;
             }
+        }
+    }
+
+    public static void sortInserts(ParkingPlace arr) {
+        int size = arr.getSize();
+        for (int i = 1; i < size; i++) {
+            for (int j = i; j > 0
+                    && arr.getVehicle(j - 1).getCost() > arr.getVehicle(j).getCost(); j--) {
+                swap(j, j - 1, arr);
+            }
+        }
+    }
+
+    public static void sortSelections(ParkingPlace arr) {
+        int size = arr.getSize();
+        int minEl;
+        for (int i = 0; i < size; i++) {
+            minEl = i;
+            for (int j = i + 1; j < size; j++) {
+                if (arr.getVehicle(j).getCost() > arr.getVehicle(i).getCost()){
+                    minEl = j;
+                }
+            }
+
+            if (minEl == i){
+                break;
+            }
+
+            swap(i,minEl,arr);
         }
     }
 
